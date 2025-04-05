@@ -1,3 +1,6 @@
+![NeuraMind AI Banner](https://github.com/prithvi429/neuramind-ai/blob/b7099337971a5d9f5634bc5dcbe5d18f8255fe73/NeuraMind%20AI%20Banner.png?raw=true)
+
+
 # NeuraMind AI
 
 🚀 **Multi-Agent AI Assistant** powered by **LangChain**, **OpenAI**, **FastAPI**, and **React**
