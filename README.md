@@ -52,7 +52,7 @@ NeuraMind AI is an open-source, multi-agent AI assistant that aims to revolution
 
 **Pruthviraj Rathod** – Passionate about building real-world AI products.
 
-📧 Email: prithvirathod29884@gmail.com  
+📧 Email: neuramind.ai001@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/rathod-pruthviraj/)  
 🐙 [GitHub](https://github.com/prithvi429)  
 🐦 [X (Twitter)](https://x.com/PrithviRathod19)
