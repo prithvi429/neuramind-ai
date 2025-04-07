@@ -1,80 +1,97 @@
 ![NeuraMind AI Banner](https://github.com/prithvi429/neuramind-ai/blob/b7099337971a5d9f5634bc5dcbe5d18f8255fe73/NeuraMind%20AI%20Banner.png?raw=true)
 
+🧠 NeuraMind AI
+🚀 Multi-Agent AI Assistant powered by LangChain, OpenAI, FastAPI, and React
 
-# NeuraMind AI
+🔗 Live Website: https://prithvi429.github.io/neuramind-website/
 
-🚀 **Multi-Agent AI Assistant** powered by **LangChain**, **OpenAI**, **FastAPI**, and **React**
+🔍 Overview
+NeuraMind AI is a free, open-source, multi-agent AI assistant designed to revolutionize human-AI interaction. Whether you're creating content, coding, generating visuals, analyzing business data, or staying productive—NeuraMind AI is your intelligent companion. Built by a solo founder, this project brings cutting-edge AI capabilities to everyone, everywhere.
 
----
+🧠 Key Features
+📝 Writing & Coding: Generate, debug, and explain code with AI-powered assistance.
 
-## 🔍 Overview
+🎨 Image Generation & Editing: Create and edit visuals using generative AI models.
 
-NeuraMind AI is an open-source, multi-agent AI assistant that aims to revolutionize the way users interact with artificial intelligence across content creation, software development, visual generation, business insights, and daily productivity. Built by a solo founder, it’s a free and powerful tool for anyone, anywhere.
+📊 Finance & Business Tools: Gain insights with smart analytics and dashboards.
 
----
+🗺️ Navigation & Productivity: Plan routes, manage tasks, and boost efficiency.
 
-## 🧠 Key Features
+🎤 Human-like Voice Interaction: Talk naturally with NeuraMind in real time.
 
-- 📝 **Writing & Coding**: AI that helps write, debug, and explain code.
-- 🎨 **Image Generation & Editing**: Create visuals using generative AI models.
-- 📊 **Finance & Business Tools**: Smart analytics and dashboards.
-- 🗺️ **Navigation & Productivity**: Plan routes, manage tasks.
-- 🎤 **Human-to-Human-like Conversation**: Real-time voice & natural dialogue.
-- 🎬 **Video Generation**: Prompt-based video creation (planned).
-- 🗣️ **Voice Accessibility**: Talk to NeuraMind naturally like a friend.
+🎬 Video Generation (Planned): Create videos from text prompts.
 
----
+🗣️ Voice Accessibility: Interact hands-free using natural speech.
 
-## 🏗️ Tech Stack
+🖥️ Website Structure
+The website is a simple and elegant landing page to showcase NeuraMind AI.
 
-- **LangChain** – agent framework
-- **OpenAI** – LLM and API
-- **FastAPI** – backend API
-- **React.js** – modern frontend UI
-- **TailwindCSS** – styling
-- **MongoDB** (Planned) – database for user memory & logs
+Navigation
+🔹 Home: Project intro and headline
 
----
+🔹 About: Mission, vision, and purpose
 
-## 📌 Roadmap
+🔹 Technology: Tech stack and core components
 
-| Phase       | Goal                                         | Status     |
-|-------------|----------------------------------------------|------------|
-| Day 1-3     | Project setup, repo, planning                | ✅ Done     |
-| Day 4-7     | Study LangChain, OpenAI, FastAPI, React      | 🚧 In Progress |
-| Week 2      | Build basic agent framework                  | ⏳ Upcoming |
-| Week 3-4    | Integrate multi-agent logic                  | ⏳ Upcoming |
-| Week 5      | Build frontend & deploy MVP                  | ⏳ Upcoming |
+🔹 Contact: Email, social links, and call to action
 
----
+✨ Website URL: https://prithvi429.github.io/neuramind-website/
 
-## 👤 About the Founder
+🏗️ Tech Stack
+Tech	Purpose
+LangChain	Agent framework & tool orchestration
+OpenAI	LLMs and AI APIs
+FastAPI	Backend API
+React.js	Frontend user interface
+TailwindCSS	Styling & responsive design
+MongoDB (Planned)	Memory & user logs
 
-**Pruthviraj Rathod** – Passionate about building real-world AI products.
+🗂️ Project Structure
+NeuraMind-AI/
+├── backend/                 # Backend codebase (FastAPI)
+│   ├── app/                # Application logic and routes
+│   └── requirements.txt    # Python dependencies
+│
+├── frontend/                # Frontend codebase (React.js)
+│   ├── src/                # Source files for UI
+│   └── package.json        # Frontend dependencies and scripts
+│
+├── docs/                   # Documentation and resources
+│
+├── NeuraMind AI Banner.png # Promo banner image
+├── README.md   
 
-📧 Email: neuramind.ai001@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/rathod-pruthviraj/)  
-🐙 [GitHub](https://github.com/prithvi429)  
-🐦 [X (Twitter)](https://x.com/PrithviRathod19)
+📌 Roadmap
+Phase	Goal	Status
+Day 1–3	Project setup, repo, planning	✅ Done
+Day 4–7	Research: LangChain, OpenAI, etc.	🚧 In Progress
+Week 2	Build basic agent framework	⏳ Upcoming
+Week 3–4	Integrate multi-agent logic	⏳ Upcoming
+Week 5	Build frontend & deploy MVP	⏳ Upcoming
+👤 About the Founder
+Pruthviraj Rathod
+AI enthusiast with a passion for building real-world, impactful products using the latest in artificial intelligence and software engineering.
 
----
+📧 Email: neuramind.ai001@gmail.com
+🔗 LinkedIn: linkedin.com/in/pruthviraj-rathod
+🐙 GitHub: github.com/prithvi429
+🐦 Twitter/X: @prithvi__429
 
-## ⭐ Contribute / Collaborate
 
-We’re open to collaboration. If you're into:
-- AI 🤖
-- Data Science 📊
-- Frontend/Backend Dev 🧱
-- Prompt Engineering ✍️
+⭐ Contribute / Collaborate
+We welcome contributors and collaborators across all domains:
 
-DM or fork the repo and let’s build the future together.
+🤖 AI Engineers
 
----
+📊 Data Scientists
 
-## 📣 Follow for Updates
+🧱 Frontend/Backend Developers
 
-> This is just the beginning. We’ll continue to update progress here and on our social media. Join us in building a truly intelligent assistant.
+✍️ Prompt Engineers
 
----
+Fork the repo, create a PR, or just DM! Let’s build the future of intelligent assistants—together.
 
-### 🧠 NeuraMind AI – A smarter way to work.
+📣 Follow for Updates
+This is just the beginning. Follow our progress here and on social media as NeuraMind AI evolves into a smarter, more powerful assistant for everyone.
+
+🧠 NeuraMind AI – A smarter way to work.
