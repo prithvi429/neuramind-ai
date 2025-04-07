@@ -12,6 +12,20 @@
 NeuraMind AI is an open-source, multi-agent AI assistant that aims to revolutionize the way users interact with artificial intelligence across content creation, software development, visual generation, business insights, and daily productivity. Built by a solo founder, it’s a free and powerful tool for anyone, anywhere.
 
 ---
+🖥️ Website Structure
+The website is a simple and elegant landing page to showcase NeuraMind AI.
+
+## Navigation
+🔹 Home: Project intro and headline
+
+🔹 About: Mission, vision, and purpose
+
+🔹 Technology: Tech stack and core components
+
+🔹 Contact: Email, social links, and call to action
+
+✨ Website URL: https://prithvi429.github.io/neuramind-website/
+---
 
 ## 🧠 Key Features
 
