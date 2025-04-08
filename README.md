@@ -24,7 +24,7 @@ The website is a simple and elegant landing page to showcase NeuraMind AI.
 
 🔹 Contact: Email, social links, and call to action
 
-✨ Website URL: https://prithvi429.github.io/neuramind-website/
+✨ Website URL: https://prithvi429.github.io/NeuraMind.AI/
 ---
 
 ## 🧠 Key Features
