@@ -1,0 +1,16 @@
+{
+  "examples": [
+    {
+      "prompt": "What is the capital of France?",
+      "response": "The capital of France is Paris."
+    },
+    {
+      "prompt": "Solve 2 + 2.",
+      "response": "The result is 4."
+    },
+    {
+      "prompt": "Translate 'Hello' to Spanish.",
+      "response": "The translation is 'Hola'."
+    }
+  ]
+}
