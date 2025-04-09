@@ -27,11 +27,11 @@ This project demonstrates how multiple AI agents (like Writing, Mapping, Finance
 
 ## 📅 Roadmap
 
-| **Week**   | **Tasks**                                      |
-|------------|-----------------------------------------------|
-| ✅ Week 1  | Logo, Vision, Roadmap, Branding, Blog #1, First Posts |
-| ✅ Week 2  | Mapping Agent logic planned, Blog #2, Website SEO, GitHub Setup |
-| 🔜 Week 3  | Build UI prototype, Launch NavMind demo, Write Blog #3 |
+| **Phase**   | **Goal**                                   | **Status**       |
+|-------------|--------------------------------------------|------------------|
+| ✅ Week 1   | Logo, Vision, Roadmap, Branding, Blog #1   | ✅ Done          |
+| ✅ Week 2   | Mapping Agent logic planned, Blog #2       | ✅ Done          |
+| 🔜 Week 3   | Build UI prototype, Launch NavMind demo    | ⏳ Upcoming      |
 
 ---
 
