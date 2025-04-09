@@ -1,92 +1,71 @@
-![NeuraMind AI Banner](https://github.com/prithvi429/neuramind-ai/blob/b7099337971a5d9f5634bc5dcbe5d18f8255fe73/NeuraMind%20AI%20Banner.png?raw=true)
+# 🧠 ai-agent-NeuraMind
 
-# NeuraMind AI
-
-🚀 **Multi-Agent AI Assistant** powered by **LangChain**, **OpenAI**, **FastAPI**, and **React**
-
----
-
-## 🔍 Overview
-
-NeuraMind AI is an open-source, multi-agent AI assistant that aims to revolutionize the way users interact with artificial intelligence across content creation, software development, visual generation, business insights, and daily productivity. Built by a solo founder, it’s a free and powerful tool for anyone, anywhere.
+**India’s First Free, Human-like Multi-Agent AI Assistant**  
+🚀 Built solo by [Pruthviraj Rathod](https://www.linkedin.com/in/rathod-pruthviraj/) with a mission to make AI accessible, useful, and personal.
 
 ---
 
-🖥️ Website Structure  
-The website is a simple and elegant landing page to showcase NeuraMind AI.
+## 📌 About the Project
 
-## Navigation
-🔹 Home: Project intro and headline  
-🔹 About: Mission, vision, and purpose  
-🔹 Technology: Tech stack and core components  
-🔹 Contact: Email, social links, and call to action  
+**NeuraMind AI** is an experimental multi-agent AI system designed to solve **real-world problems** in a human-like way.  
+This project demonstrates how multiple AI agents (like Writing, Mapping, Finance, etc.) can work together under one assistant, built using **open-source tech + voice integration + practical use cases**.
 
-✨ Website URL: https://prithvi429.github.io/NeuraMind.AI/
+> 💡 *“This project is created to show the community how we can build an AI assistant that actually helps people — and how we can keep adding more smart agents over time.”*
 
 ---
 
-## 🧠 Key Features
+## 🌟 Key Features
 
-- 📝 **Writing & Coding**: AI that helps write, debug, and explain code.
-- 🎨 **Image Generation & Editing**: Create visuals using generative AI models.
-- 📊 **Finance & Business Tools**: Smart analytics and dashboards.
-- 🗺️ **Navigation & Productivity**: Plan routes, manage tasks.
-- 🎤 **Human-to-Human-like Conversation**: Real-time voice & natural dialogue.
-- 🎬 **Video Generation**: Prompt-based video creation (planned).
-- 🗣️ **Voice Accessibility**: Talk to NeuraMind naturally like a friend.
-
----
-
-## 🏗️ Tech Stack
-
-- **LangChain** – agent framework
-- **OpenAI** – LLM and API
-- **FastAPI** – backend API
-- **React.js** – modern frontend UI
-- **TailwindCSS** – styling
-- **MongoDB** (Planned) – database for user memory & logs
+- ✍️ **Writing & Code Agent** – Generates content or code based on user prompts.
+- 🗺️ **Mapping & Navigation Agent** – Takes voice commands like “I’m going to Mumbai” and suggests routes.
+- 📈 **Finance & Business Agent** – Analyzes numbers and gives insights.
+- 🎨 **Image/Video Agent** – *Coming soon*: Prompt-based media generation.
+- 🔊 **Voice Support** – Interact via speech, not just typing.
+- 💬 **Human-to-Human Feel** – Emotion-aware, context-sensitive AI replies.
 
 ---
 
-## 📌 Roadmap
+## 📅 Roadmap
 
-| Phase       | Goal                                         | Status         |
-|-------------|----------------------------------------------|----------------|
-| Day 1-3     | Project setup, repo, planning                | ✅ Done         |
-| Day 4-7     | Study LangChain, OpenAI, FastAPI, React      | 🚧 In Progress |
-| Week 2      | Build basic agent framework                  | ⏳ Upcoming     |
-| Week 3-4    | Integrate multi-agent logic                  | ⏳ Upcoming     |
-| Week 5      | Build frontend & deploy MVP                  | ⏳ Upcoming     |
+| **Week**   | **Tasks**                                      |
+|------------|-----------------------------------------------|
+| ✅ Week 1  | Logo, Vision, Roadmap, Branding, Blog #1, First Posts |
+| ✅ Week 2  | Mapping Agent logic planned, Blog #2, Website SEO, GitHub Setup |
+| 🔜 Week 3  | Build UI prototype, Launch NavMind demo, Write Blog #3 |
 
 ---
 
-## 👤 About the Founder
+## 🔧 Tech Stack
 
-**Pruthviraj Rathod** – Passionate about building real-world AI products.
-
-📧 Email: prithvirathod29884@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/rathod-pruthviraj/)  
-🐙 [GitHub](https://github.com/prithvi429)  
-🐦 [X (Twitter)](https://x.com/PrithviRathod19)
+- **Languages & Frameworks**: Python, React, OpenAI, Google Maps API
+- **Tools**: VS Code, Jupyter, Figma, Firebase
+- **Version Control**: GitHub
 
 ---
 
-## ⭐ Contribute / Collaborate
+## 📢 Project Status
 
-We’re open to collaboration. If you're into:
-- AI 🤖
-- Data Science 📊
-- Frontend/Backend Dev 🧱
-- Prompt Engineering ✍️
-
-DM or fork the repo and let’s build the future together.
+🎯 **Current Focus**: Building out the **first agent** (NavMind: Mapping + Voice).  
+✅ **Next Steps**: Adding more agents and opening it up for community collaboration.
 
 ---
 
-## 📣 Follow for Updates
+## 📬 Contact
 
-> This is just the beginning. We’ll continue to update progress here and on our social media. Join us in building a truly intelligent assistant.
+👨‍💻 **Founder**: Pruthviraj Rathod  
+📧 **Email**: prithvirathod29884@gmail.com  
+🌐 **Socials**:  
+- [LinkedIn](https://www.linkedin.com/in/rathod-pruthviraj/)  
+- [GitHub](https://github.com/prithvi429)  
+- [Twitter/X](https://x.com/PrithviRathod19)
 
 ---
 
-### 🧠 NeuraMind AI – A smarter way to work.
+## ⚡ License
+
+This project is open source under the [MIT License](LICENSE).
+
+---
+
+> 💬 *“Built alone, but made for everyone. This is just the beginning.”*  
+> – **Pruthviraj Rathod**
