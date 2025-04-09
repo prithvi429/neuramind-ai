@@ -4,18 +4,7 @@
 
 ---
 
-## 🙏 My Why – Where It All Started
 
-I didn’t begin this journey with funding, a team, or a prestigious university tag.  
-I started with one thing: **a deep purpose** to create something meaningful… something *mine*.  
-
-There was no company hiring me.  
-No friend helping me build.  
-No shortcut.  
-
-What I had was **faith**, and the courage to walk alone.  
-
----
 
 ## 🧠 NeuraMind AI – Born from Purpose
 
@@ -34,19 +23,6 @@ Just my laptop, vision, and **unstoppable belief**.
 
 ---
 
-## 🔥 Challenges I Faced
-
-Building NeuraMind wasn’t easy. It demanded sacrifices:  
-
-- Skipping distractions, parties, and outings.  
-- Walking away from friends who didn’t value my time.  
-- Facing self-doubt, stress, and anxiety.  
-
-But I never gave up.  
-Every time I felt weak, I turned to **Hanuman Ji** for strength.  
-Every time I wanted to quit, I told myself — *“One more step.”*
-
----
 
 ## 🧱 Skills I Learned Doing Everything Alone
 
