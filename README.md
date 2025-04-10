@@ -1,3 +1,5 @@
+![NeuraMind AI Banner](https://github.com/prithvi429/neuramind-ai/blob/main/assets/logo.png?raw=true)
+
 # 🧠 NeuraMind AI
 
 **India’s First Free, Human-like Multi-Agent AI Assistant**  
