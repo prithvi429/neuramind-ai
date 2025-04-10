@@ -11,6 +11,14 @@
     {
       "prompt": "Translate 'Hello' to Spanish.",
       "response": "The translation is 'Hola'."
+    },
+    {
+      "prompt": "What is the largest planet in our solar system?",
+      "response": "The largest planet in our solar system is Jupiter."
+    },
+    {
+      "prompt": "Who wrote 'Romeo and Juliet'?",
+      "response": "The play 'Romeo and Juliet' was written by William Shakespeare."
     }
   ]
 }
