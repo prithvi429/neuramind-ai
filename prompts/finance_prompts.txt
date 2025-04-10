@@ -1,0 +1,6 @@
+# Finance Agent Prompts
+
+1. Analyze the financial data for Q1 2025 and provide insights.
+2. Generate a monthly expense report for a small business.
+3. Predict the revenue growth for the next quarter based on historical data.
+4. Create a summary of the top 5 investment opportunities in the tech sector.

@@ -1,0 +1,6 @@
+# Writing Agent Prompts
+
+1. Write a blog post about the future of artificial intelligence.
+2. Generate a poem about the beauty of nature.
+3. Create a short story about a robot helping humans in a futuristic city.
+4. Write a technical article explaining the concept of multi-agent systems.

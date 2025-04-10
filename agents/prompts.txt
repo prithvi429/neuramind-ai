@@ -1,0 +1,17 @@
+# Example Prompts for Agents
+
+1. Navigation Agent:
+   - "Plan a route from New York to Los Angeles avoiding toll roads."
+   - "Find the shortest path between Paris and Berlin."
+
+2. Writing Agent:
+   - "Write a blog post about the future of AI."
+   - "Generate a poem about nature."
+
+3. Image Agent:
+   - "Create an image of a futuristic cityscape."
+   - "Generate an illustration of a robot helping humans."
+
+4. Finance Agent:
+   - "Analyze the financial data for Q1 2025."
+   - "Generate a report on monthly expenses."

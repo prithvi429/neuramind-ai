@@ -1,0 +1,7 @@
+{
+  "prompt": "Write a short story about a futuristic AI assistant helping humanity.",
+  "parameters": {
+    "length": "500 words",
+    "tone": "inspirational"
+  }
+}

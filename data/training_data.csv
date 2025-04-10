@@ -1,0 +1,4 @@
+input,prompt_type,output
+"What is the capital of France?",general,"The capital of France is Paris."
+"Plan a route from New York to Los Angeles.",navigation,"Route planned successfully."
+"Write a short story about AI.",writing,"Once upon a time, AI transformed the world..."

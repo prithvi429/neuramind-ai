@@ -1,0 +1,16 @@
+{
+  "agent_name": "NeuraMind AI Agent",
+  "version": "1.0.0",
+  "supported_agents": [
+    "mapping_agent",
+    "voice_agent",
+    "writing_agent",
+    "image_agent",
+    "finance_agent"
+  ],
+  "default_language": "en",
+  "logging": {
+    "level": "info",
+    "file": "agent_logs.log"
+  }
+}

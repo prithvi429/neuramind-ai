@@ -1,0 +1,6 @@
+# Image Agent Prompts
+
+1. Generate an image of a futuristic cityscape at night.
+2. Create an illustration of a robot assisting humans in a laboratory.
+3. Design a logo for an AI-powered navigation system.
+4. Generate a landscape image of a serene mountain with a glowing sunset.

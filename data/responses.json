@@ -1,0 +1,19 @@
+{
+  "responses": [
+    {
+      "id": 1,
+      "input": "What is the capital of France?",
+      "response": "The capital of France is Paris."
+    },
+    {
+      "id": 2,
+      "input": "Plan a route from New York to Los Angeles.",
+      "response": "Route planned successfully."
+    },
+    {
+      "id": 3,
+      "input": "Write a short story about AI.",
+      "response": "Once upon a time, AI transformed the world..."
+    }
+  ]
+}
