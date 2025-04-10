@@ -1,4 +1,4 @@
-# 🧠 ai-agent-NeuraMind
+# 🧠 NeuraMind AI
 
 **India’s First Free, Human-like Multi-Agent AI Assistant**  
 🚀 Built solo by [Pruthviraj Rathod](https://www.linkedin.com/in/rathod-pruthviraj/) with a mission to make AI accessible, useful, and personal.
@@ -7,50 +7,81 @@
 
 ## 📌 About the Project
 
-**NeuraMind AI** is an experimental multi-agent AI system designed to solve **real-world problems** in a human-like way.  
-This project demonstrates how multiple AI agents (like Writing, Mapping, Finance, etc.) can work together under one assistant, built using **open-source tech + voice integration + practical use cases**.
-
-> 💡 *“This project is created to show the community how we can build an AI assistant that actually helps people — and how we can keep adding more smart agents over time.”*
+NeuraMind AI is a modular multi-agent system designed to solve real-world problems like navigation, content generation, image processing, and financial analysis. Each agent operates independently but collaborates through a central backend.
 
 ---
 
-## 🌟 Key Features
+## 📂 Project Structure
 
-- ✍️ **Writing & Code Agent** – Generates content or code based on user prompts.
-- 🗺️ **Mapping & Navigation Agent** – Takes voice commands like “I’m going to Mumbai” and suggests routes.
-- 📈 **Finance & Business Agent** – Analyzes numbers and gives insights.
-- 🎨 **Image/Video Agent** – *Coming soon*: Prompt-based media generation.
-- 🔊 **Voice Support** – Interact via speech, not just typing.
-- 💬 **Human-to-Human Feel** – Emotion-aware, context-sensitive AI replies.
+```
+neuramind-ai/
+├── agents/                 # Individual AI agents
+│   ├── config.json         # Agent configuration
+│   ├── prompts.txt         # Example prompts for agents
+│   ├── mapping_agent.py    # Mapping agent
+│   ├── voice_agent.py      # Voice processing agent
+│   ├── writing_agent.py    # Content generation agent
+│   ├── image_agent.py      # Image generation agent
+│   └── finance_agent.py    # Financial analysis agent
+├── api_docs/               # API documentation
+│   ├── openapi.yaml        # OpenAPI specification
+│   └── README.md           # API usage guide
+├── backend/                # Backend logic and APIs
+│   ├── main.py             # Entry point for the backend
+│   ├── nav_agent.py        # Navigation agent logic
+│   ├── image_agent.py      # Image processing agent
+│   └── utils/              # Utility functions
+├── data/                   # Data files and examples
+│   ├── prompts/            # Prompts for agents
+│   ├── training_data.csv   # Training data for AI models
+│   ├── responses.json      # Example responses
+│   └── README.md           # Data folder documentation
+├── docs/                   # Documentation
+│   ├── architecture.md     # System architecture
+│   ├── roadmap.md          # Development roadmap
+│   ├── production_plan.md  # Production plan
+│   ├── inspiration.md      # Project inspiration
+│   └── installation_guide.md # Installation guide
+├── frontend/               # Frontend code
+│   ├── public/             # Static files
+│   ├── src/                # React components
+│   ├── styles/             # CSS styles
+│   └── README.md           # Frontend folder documentation
+├── notebooks/              # Jupyter notebooks
+│   ├── nav_agent_flow.ipynb # Navigation agent flow
+│   └── text_generation_prompts.ipynb # Writing agent prompts
+├── prompts/                # Prompts for agents
+│   ├── writing_agent_prompts.txt
+│   ├── image_agent_prompts.txt
+│   └── finance_prompts.txt
+├── test/                   # Test scripts
+│   ├── test_nav_agent.py   # Tests for navigation agent
+│   ├── test_frontend_render.py # Tests for frontend rendering
+│   └── test_endpoints.py   # Tests for backend endpoints
+├── weights/                # Pre-trained model weights
+│   └── mapping_model.pt    # Mapping agent model
+└── README.md               # Main project documentation
+```
 
 ---
 
-## 📅 Roadmap
+## 🚀 Features
 
-| **Phase**   | **Goal**                                   | **Status**       |
-|-------------|--------------------------------------------|------------------|
-| ✅ Week 1   | Logo, Vision, Roadmap, Branding, Blog #1   | ✅ Done          |
-| ✅ Week 2   | Mapping Agent logic planned, Blog #2       | ✅ Done          |
-| 🔜 Week 3   | Build UI prototype, Launch NavMind demo    | ⏳ Upcoming      |
-
----
-
-## 🔧 Tech Stack
-
-- **Languages & Frameworks**: Python, React, OpenAI, Google Maps API
-- **Tools**: VS Code, Jupyter, Figma, Firebase
-- **Version Control**: GitHub
+- **Writing & Coding**: Generate content or code based on user prompts.
+- **Mapping & Navigation**: Plan routes and provide navigation assistance.
+- **Image Generation & Editing**: Create and edit images using AI.
+- **Finance & Business Insights**: Analyze financial data and generate reports.
+- **Voice Interaction**: Communicate with the system using natural language.
 
 ---
 
-## 📢 Project Status
+## 🛠️ Installation
 
-🎯 **Current Focus**: Building out the **first agent** (NavMind: Mapping + Voice).  
-✅ **Next Steps**: Adding more agents and opening it up for community collaboration.
+Refer to the [Installation Guide](docs/installation_guide.md) for detailed setup instructions.
 
 ---
 
-## 📬 Contact
+## 📢 Contact
 
 👨‍💻 **Founder**: Pruthviraj Rathod  
 📧 **Email**: prithvirathod29884@gmail.com  
@@ -61,11 +92,4 @@ This project demonstrates how multiple AI agents (like Writing, Mapping, Finance
 
 ---
 
-## ⚡ License
-
-This project is open source under the [MIT License](LICENSE).
-
----
-
-> 💬 *“Built alone, but made for everyone. This is just the beginning.”*  
-> – **Pruthviraj Rathod**
+**NeuraMind AI – A smarter way to work.**
