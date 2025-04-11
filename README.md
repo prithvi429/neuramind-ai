@@ -74,12 +74,56 @@ neuramind-ai/
 - **Image Generation & Editing**: Create and edit images using AI.
 - **Finance & Business Insights**: Analyze financial data and generate reports.
 - **Voice Interaction**: Communicate with the system using natural language.
+- **Customizable Settings Panel**:
+  - **Custom Instructions**: Provide specific instructions for the AI to follow.
+  - **Language, Tone, and Style**: Choose between default, formal, casual, or creative response styles.
+  - **Data Privacy Controls**: Manage how your data is handled with options like default, strict, or relaxed.
+- **Chat History Management**:
+  - Rename or delete chat sessions.
+  - Organized by time periods (Today, Previous 7 Days, Previous 30 Days).
+- **Persona Store**:
+  - Access pre-configured AI personas for specific tasks.
+- **Explore Neura**:
+  - Discover additional tools and plugins.
+- **Upgrade Plan**:
+  - Subscribe to NeuraMind Plus for faster responses, advanced features, and more.
 
 ---
 
 ## 🛠️ Installation
 
 Refer to the [Installation Guide](docs/installation_guide.md) for detailed setup instructions.
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/neuramind-ai.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd neuramind-ai
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+---
+
+## 📖 Usage
+
+- Open the application in your browser.
+- Use the **Settings Panel** to customize your experience.
+- Start new chats, explore personas, or upgrade your plan for additional features.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request.
 
 ---
 
@@ -91,6 +135,12 @@ Refer to the [Installation Guide](docs/installation_guide.md) for detailed setup
 - [LinkedIn](https://www.linkedin.com/in/rathod-pruthviraj/)  
 - [GitHub](https://github.com/prithvi429)  
 - [Twitter/X](https://x.com/PrithviRathod19)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
 
 ---
 

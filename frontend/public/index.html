@@ -4,8 +4,682 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeuraMind AI</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --deep-space: #0a0b0f;
+            --interface-gray: #1a1c24;
+            --white: #ffffff;
+            --black: #000000;
+            --notification-bg: #ff5722;
+            --success-green: #4caf50;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: var(--deep-space);
+            color: white;
+            height: 100vh;
+            display: flex;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.light-mode {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        #root {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main-interface {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sidebar {
+            width: 280px;
+            background: var(--interface-gray);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            overflow-y: auto;
+            transition: background 0.3s;
+        }
+
+        body.light-mode .sidebar {
+            background: var(--white);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--neon-blue);
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .settings-panel {
+            margin-top: auto;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .settings-panel h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .settings-panel select {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--neon-blue);
+            background: var(--interface-gray);
+            color: white;
+        }
+
+        .logout-icon {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .activity-tracker {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .activity-tracker h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .activity-tracker ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .activity-tracker li {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .feedback-section {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .feedback-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .feedback-section textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid var(--neon-blue);
+            background: var(--interface-gray);
+            color: white;
+            resize: none;
+        }
+
+        .feedback-section button {
+            margin-top: 0.5rem;
+            background: var(--success-green);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .feedback-section button:hover {
+            opacity: 0.9;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-history {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .input-container {
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--neon-blue);
+            border-radius: 12px;
+            color: white;
+            padding-right: 120px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.light-mode .chat-input {
+            background: rgba(0, 0, 0, 0.05);
+            color: black;
+        }
+
+        .toolbar {
+            position: absolute;
+            right: 2.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .send-button {
+            background: var(--neon-blue);
+            color: var(--deep-space);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .send-button:hover {
+            opacity: 0.9;
+        }
+
+        .message {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            max-width: 70%;
+        }
+
+        .user-message {
+            background: rgba(0, 243, 255, 0.1);
+            margin-left: auto;
+        }
+
+        .ai-message {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            background: var(--neon-blue);
+            color: var(--deep-space);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: none;
+        }
+
+        .theme-toggle:hover {
+            opacity: 0.9;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            background: var(--notification-bg);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .notification.show {
+            display: block;
+        }
+
+        .user-menu {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .user-menu img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .user-menu-dropdown {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: var(--interface-gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-menu-dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .user-menu-dropdown a:hover {
+            color: var(--neon-blue);
+        }
+
+        .chat-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .chat-options button {
+            background: var(--interface-gray);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .chat-options button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-options .save-pdf {
+            background: var(--success-green);
+            color: white;
+        }
+
+        .chat-options .save-pdf:hover {
+            opacity: 0.9;
+        }
+
+        .persona-store {
+            margin-top: auto;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .persona-store:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <div id="root"></div>
+    <!-- NeuraMind Logo for Starting New Chat -->
+    <div class="logo" onclick="startNewChat()" style="position: absolute; top: 1rem; left: 1rem; cursor: pointer; z-index: 1000;">
+        <img src="neurabrain-logo.png" alt="NeuraMind Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+    </div>
+    <!-- GPT Version Dropdown -->
+    <div style="position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); z-index: 1000;">
+        <select id="gpt-version" style="padding: 0.5rem; border-radius: 6px; border: 1px solid var(--neon-blue); background: var(--interface-gray); color: white;">
+            <option value="neura_ai_3.5">NEURA_AI-3.5 (Free)</option>
+            <!-- Add more versions here -->
+        </select>
+    </div>
+    <div class="user-menu" onclick="toggleUserMenu()" style="position: absolute; top: 1rem; right: 1rem; cursor: pointer; display: flex; align-items: center; gap: 1rem;">
+        <!-- Profile Bubble -->
+        <img src="user-logo.png" alt="User Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+        <div class="user-menu-dropdown" id="user-menu-dropdown" style="display: none; position: absolute; top: 60px; right: 0; background: var(--interface-gray); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+            <a href="#" style="display: block; color: white; text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s;" onclick="toggleSettings()">Settings</a>
+            <a href="#" style="display: block; color: white; text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s;">Theme (Light/Dark)</a>
+            <a href="#" style="display: block; color: white; text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s;">Sign Out</a>
+        </div>
+    </div>
+    <!-- Settings Panel -->
+    <div id="settings-panel" style="display: none; position: fixed; top: 20%; left: 50%; transform: translate(-50%, -20%); width: 450px; background: var(--interface-gray); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 1000;">
+        <h4 style="color: var(--neon-blue); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fas fa-cogs"></i> Settings
+        </h4>
+        <!-- Custom Instructions -->
+        <div style="margin-bottom: 1.5rem;">
+            <label for="custom-instructions" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <i class="fas fa-edit" style="color: var(--neon-blue);"></i> Custom Instructions
+                <span title="Provide specific instructions for the AI to follow." style="cursor: help; color: var(--neon-blue);"><i class="fas fa-info-circle"></i></span>
+            </label>
+            <textarea id="custom-instructions" rows="3" style="width: 100%; padding: 0.5rem; border-radius: 6px; border: 1px solid var(--neon-blue); background: var(--interface-gray); color: white;"></textarea>
+        </div>
+        <!-- Language, Tone, and Style -->
+        <div style="margin-bottom: 1.5rem;">
+            <label for="language-tone" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <i class="fas fa-language" style="color: var(--neon-blue);"></i> Language, Tone, and Style
+                <span title="Choose the language, tone, and response style for the AI." style="cursor: help; color: var(--neon-blue);"><i class="fas fa-info-circle"></i></span>
+            </label>
+            <select id="language-tone" style="width: 100%; padding: 0.5rem; border-radius: 6px; border: 1px solid var(--neon-blue); background: var(--interface-gray); color: white;">
+                <option value="default">Default</option>
+                <option value="formal">Formal</option>
+                <option value="casual">Casual</option>
+                <option value="creative">Creative</option>
+            </select>
+        </div>
+        <!-- Data Privacy Controls -->
+        <div style="margin-bottom: 1.5rem;">
+            <label for="data-privacy" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <i class="fas fa-shield-alt" style="color: var(--neon-blue);"></i> Data Privacy Controls
+                <span title="Manage how your data is handled by the AI." style="cursor: help; color: var(--neon-blue);"><i class="fas fa-info-circle"></i></span>
+            </label>
+            <select id="data-privacy" style="width: 100%; padding: 0.5rem; border-radius: 6px; border: 1px solid var(--neon-blue); background: var(--interface-gray); color: white;">
+                <option value="default">Default</option>
+                <option value="strict">Strict</option>
+                <option value="relaxed">Relaxed</option>
+            </select>
+        </div>
+        <!-- Save and Close Buttons -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button onclick="saveSettings()" style="background: var(--success-green); color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+                <i class="fas fa-save"></i> Save
+            </button>
+            <button onclick="closeSettings()" style="background: var(--neon-blue); color: var(--deep-space); border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    </div>
+    <div id="root">
+        <div class="main-interface">
+            <div class="sidebar" id="sidebar">
+                <div class="logo">
+                    <img src="logo.png" alt="NeuraMind Logo">
+                    NeuraMind AI
+                </div>
+                <!-- New Chat Button -->
+                <div class="chat-item" style="color: var(--neon-blue); cursor: pointer;" onclick="startNewChat()">
+                    <i class="fas fa-plus"></i> New Chat
+                </div>
+                <!-- Chat History -->
+                <h4>Chat History</h4>
+                <div class="chat-history-section">
+                    <h5 style="margin-top: 1rem; color: var(--neon-blue);">Today</h5>
+                    <div class="chat-item">
+                        <input type="text" value="Neuramind AI" class="chat-name" readonly style="background: transparent; border: none; color: white; flex: 1;" ondblclick="enableRename(this)" onblur="saveRename(this)">
+                        <i class="fas fa-times" style="margin-left: auto; color: var(--neon-blue); cursor: pointer;" onclick="deleteChat('Neuramind AI')"></i>
+                    </div>
+                    <h5 style="margin-top: 1rem; color: var(--neon-blue);">Previous 7 Days</h5>
+                    <div class="chat-item">
+                        <input type="text" value="Project Quantum" class="chat-name" readonly style="background: transparent; border: none; color: white; flex: 1;" ondblclick="enableRename(this)" onblur="saveRename(this)">
+                        <i class="fas fa-times" style="margin-left: auto; color: var(--neon-blue); cursor: pointer;" onclick="deleteChat('Project Quantum')"></i>
+                    </div>
+                    <h5 style="margin-top: 1rem; color: var(--neon-blue);">Previous 30 Days</h5>
+                    <div class="chat-item">
+                        <input type="text" value="Creative Writing Session" class="chat-name" readonly style="background: transparent; border: none; color: white; flex: 1;" ondblclick="enableRename(this)" onblur="saveRename(this)">
+                        <i class="fas fa-times" style="margin-left: auto; color: var(--neon-blue); cursor: pointer;" onclick="deleteChat('Creative Writing Session')"></i>
+                    </div>
+                </div>
+                <!-- Persona Store -->
+                <div class="persona-store" onclick="openPersonaStore()">
+                    <i class="fas fa-brain" style="margin-right: 0.5rem; color: var(--neon-blue);"></i>
+                    Persona Store
+                </div>
+                <!-- Explore Neura Button -->
+                <div class="explore-neura" onclick="openNeuraStore()" style="margin-top: 1rem; padding: 1rem; background: var(--interface-gray); border-radius: 8px; cursor: pointer; display: flex; align-items: center;">
+                    <i class="fas fa-store" style="margin-right: 0.5rem; color: var(--neon-blue);"></i>
+                    Explore Neura
+                </div>
+                <!-- Upgrade Plan Button -->
+                <div class="upgrade-plan" onclick="openUpgradePlan()" style="margin-top: 1rem; padding: 1rem; background: var(--success-green); border-radius: 8px; cursor: pointer; display: flex; align-items: center; color: white;">
+                    <i class="fas fa-crown" style="margin-right: 0.5rem;"></i>
+                    Upgrade Plan
+                </div>
+            </div>
+            <div class="chat-container">
+                <!-- Header -->
+                <div class="chat-header" style="background: var(--interface-gray); padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; color: var(--neon-blue); position: relative;">
+                    Neuramind.AI
+                    <!-- Temporary Badge with Logo -->
+                    <img src="temporary-logo.png" alt="Temporary Badge" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%;">
+                </div>
+                <!-- Message Area -->
+                <div class="chat-history" style="flex: 1; background: black; color: white; padding: 2rem; overflow-y: auto;">
+                    <!-- Welcome Message -->
+                    <p style="text-align: center; color: gray; font-size: 1.2rem;">What can I help with?</p>
+                </div>
+                <!-- Input Area -->
+                <div class="input-container" style="padding: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); position: relative;">
+                    <!-- Left-side Buttons -->
+                    <div class="left-tools" style="position: absolute; left: 2rem; top: 50%; transform: translateY(-50%); display: flex; gap: 1rem;">
+                        <button class="tool-button" onclick="activateSearch()" style="background: var(--interface-gray); color: white; border: none; padding: 0.5rem; border-radius: 6px; cursor: pointer;">
+                            🌐 
+                        </button>
+                        <button class="tool-button" onclick="activateLocation()" style="background: var(--interface-gray); color: white; border: none; padding: 0.5rem; border-radius: 6px; cursor: pointer;">
+                            📍 
+                        </button>
+                        <button class="tool-button" onclick="activateReasoning()" style="background: var(--interface-gray); color: white; border: none; padding: 0.5rem; border-radius: 6px; cursor: pointer;">
+                            🧠 
+                        </button>
+                        <button class="tool-button" onclick="openExtraTools()" style="background: var(--interface-gray); color: white; border: none; padding: 0.5rem; border-radius: 6px; cursor: pointer;">
+                            ... 
+                        </button>
+                    </div>
+                    <!-- Right-side Icons -->
+                    <div class="right-tools" style="position: absolute; right: 2.5rem; top: 50%; transform: translateY(-50%); display: flex; gap: 1rem;">
+                        <button class="tool-button" onclick="startVoiceInput()" style="background: var(--interface-gray); color: white; border: none; padding: 0.5rem; border-radius: 50%; cursor: pointer;">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="tool-button" onclick="startMultiTurnVoice()" style="background: black; color: white; border: none; padding: 0.5rem; border-radius: 50%; cursor: pointer;">
+                            <i class="fas fa-wave-square"></i>
+                        </button>
+                    </div>
+                    <!-- Input Box -->
+                    <input type="text" class="chat-input" placeholder="Ask anything" style="width: 100%; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--neon-blue); border-radius: 12px; color: white; padding-right: 120px;">
+                    <!-- Toolbar -->
+                    <div class="toolbar" style="position: absolute; right: 6rem; top: 50%; transform: translateY(-50%); display: flex; gap: 1rem;">
+                        <label class="file-input-label">
+                            <i class="fas fa-paperclip"></i>
+                            <input type="file" multiple accept=".pdf,.docx,.xlsx,.jpg,.mp4" hidden>
+                        </label>
+                        <button class="send-button" style="background: var(--neon-blue); color: var(--deep-space); border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer;">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notification" id="notification">New message received!</div>
+    <!-- Help Button -->
+    <div onclick="openHelp()" style="position: fixed; bottom: 1rem; right: 1rem; width: 50px; height: 50px; background: var(--neon-blue); color: var(--deep-space); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <i class="fas fa-question" style="font-size: 1.5rem;"></i>
+    </div>
+    <script>
+        function toggleUserMenu() {
+            const menu = document.getElementById('user-menu-dropdown');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function startVoiceInput() {
+            alert('Starting single-turn voice input...');
+            // Logic to use OpenAI Whisper for voice-to-text conversion
+        }
+
+        function startMultiTurnVoice() {
+            alert('Starting multi-turn voice conversation...');
+            // Logic to enable ongoing voice conversations
+        }
+
+        function openMap() {
+            alert('Map feature is not implemented yet.');
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            setTimeout(() => notification.classList.remove('show'), 3000);
+        }
+
+        function submitFeedback() {
+            const feedback = document.querySelector('.feedback-section textarea').value;
+            if (feedback.trim()) {
+                alert('Thank you for your feedback!');
+                document.querySelector('.feedback-section textarea').value = '';
+            } else {
+                alert('Please enter your feedback before submitting.');
+            }
+        }
+
+        function archiveChat() {
+            alert('Chat archived successfully!');
+        }
+
+        function deleteChat(chatName) {
+            if (confirm(`Are you sure you want to delete the chat "${chatName}"?`)) {
+                alert(`Chat "${chatName}" deleted.`);
+                // Logic to delete the chat
+            }
+        }
+
+        function saveChatAsPDF() {
+            alert('Chat saved as PDF!');
+        }
+
+        function logOutUser() {
+            if (confirm('Are you sure you want to log out?')) {
+                alert('You have been logged out.');
+                // Redirect to login page or perform logout logic
+                window.location.href = '/login';
+            }
+        }
+
+        function startNewChat() {
+            alert('Starting a new chat...');
+            // Logic to start a new chat
+        }
+
+        function enableRename(input) {
+            input.removeAttribute('readonly');
+            input.style.border = '1px solid var(--neon-blue)';
+            input.focus();
+        }
+
+        function saveRename(input) {
+            input.setAttribute('readonly', true);
+            input.style.border = 'none';
+            alert(`Chat renamed to "${input.value}".`);
+            // Logic to save the renamed chat
+        }
+
+        function openPersonaStore() {
+            alert('Opening Persona Store...');
+            // Logic to open the Persona Store
+        }
+
+        function openNeuraStore() {
+            alert('Opening Neura Store...');
+            // Logic to open the Neura Store
+        }
+
+        function openUpgradePlan() {
+            alert('Subscribe to NeuraMind Plus for access to Neur-2, faster responses, plugins, and more!');
+            // Logic to open the upgrade plan subscription page
+        }
+
+        function activateSearch() {
+            alert('Search tool activated!');
+            // Logic to enable web-enabled searching
+        }
+
+        function activateLocation() {
+            alert('Location tool activated!');
+            // Logic to enable location-specific queries
+        }
+
+        function activateReasoning() {
+            alert('Reasoning tool activated!');
+            // Logic to enable reasoning breakdown
+        }
+
+        function openExtraTools() {
+            alert('Opening extra tools/plugins...');
+            // Logic to open additional tools/plugins
+        }
+
+        function openHelp() {
+            alert('Opening Help, FAQs, and Feedback...');
+            // Logic to open a help modal or redirect to a help page
+        }
+
+        function toggleSettings() {
+            const panel = document.getElementById('settings-panel');
+            panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function closeSettings() {
+            document.getElementById('settings-panel').style.display = 'none';
+        }
+
+        function saveSettings() {
+            alert('Settings saved successfully!');
+            closeSettings();
+        }
+
+        // Example usage of notification
+        setTimeout(() => showNotification('Welcome to NeuraMind AI!'), 1000);
+
+        // Example activity tracker update
+        function logActivity(activity) {
+            const activityLog = document.getElementById('activity-log');
+            const newActivity = document.createElement('li');
+            newActivity.textContent = activity;
+            activityLog.appendChild(newActivity);
+        }
+
+        logActivity('User logged in.');
+    </script>
 </body>
 </html>
