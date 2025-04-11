@@ -1,31 +1,29 @@
-# Writing Agent: Handles content generation tasks.
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import PromptTemplate
 
-def generate_content(prompt):
-    """
-    Generates content based on the provided prompt.
+class WritingAgent:
+    def __init__(self):
+        """
+        Initializes the WritingAgent with a language model.
+        """
+        self.llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.7)
 
-    Args:
-        prompt (str): The input prompt for content generation.
+    def generate_content(self, prompt):
+        """
+        Generates creative content based on the provided prompt.
 
-    Returns:
-        str: The generated content.
-    """
-    print(f"Generating content for prompt: {prompt}")
-    # Add logic for content generation here
-    if prompt == "What is the capital of France?":
-        return "The capital of France is Paris."
-    elif prompt == "Solve 2 + 2.":
-        return "The result is 4."
-    elif prompt == "Translate 'Hello' to Spanish.":
-        return "The translation is 'Hola'."
-    elif prompt == "What is the largest planet in our solar system?":
-        return "The largest planet in our solar system is Jupiter."
-    elif prompt == "Who wrote 'Romeo and Juliet'?":
-        return "The play 'Romeo and Juliet' was written by William Shakespeare."
-    else:
-        return f"Generated content based on the prompt: '{prompt}'"
+        Args:
+            prompt (str): The topic or input for content generation.
+
+        Returns:
+            str: The generated content.
+        """
+        template = PromptTemplate.from_template("Write a creative blog paragraph about: {topic}")
+        chain = template | self.llm
+        return chain.invoke({"topic": prompt})
 
 if __name__ == "__main__":
     # Example usage
-    content = generate_content("Write a short story about AI.")
+    agent = WritingAgent()
+    content = agent.generate_content("Write a short story about AI.")
     print(content)

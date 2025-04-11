@@ -1,18 +1,26 @@
+import openai
+
 # Image Agent: Handles image generation and editing tasks.
 
-def generate_image(prompt):
-    """
-    Generates an image based on the provided prompt.
+class ImageAgent:
+    def __init__(self):
+        """
+        Initializes the ImageAgent with OpenAI API key.
+        """
+        openai.api_key = "YOUR_API_KEY"
 
-    Args:
-        prompt (str): The input prompt for image generation.
+    def generate_image(self, prompt):
+        """
+        Generates an image based on the provided prompt.
 
-    Returns:
-        str: A message indicating the image generation status.
-    """
-    print(f"Generating image for prompt: {prompt}")
-    # Add logic for image generation here
-    return f"Image generated successfully for the prompt: '{prompt}'"
+        Args:
+            prompt (str): The description of the image to generate.
+
+        Returns:
+            str: The URL of the generated image.
+        """
+        response = openai.Image.create(prompt=prompt, n=1, size="512x512")
+        return response['data'][0]['url']
 
 def edit_image(image_path, instructions):
     """
@@ -31,8 +39,9 @@ def edit_image(image_path, instructions):
 
 if __name__ == "__main__":
     # Example usage
-    generated_image = generate_image("A futuristic cityscape at night.")
-    print(generated_image)
+    agent = ImageAgent()
+    image_url = agent.generate_image("A futuristic cityscape at night.")
+    print(f"Generated Image URL: {image_url}")
 
     edited_image = edit_image("cityscape.png", "Add a glowing moon in the background.")
     print(edited_image)

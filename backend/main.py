@@ -1,22 +1,23 @@
-from flask import Flask
-from nav_agent import get_route
-from image_agent import generate_image
+from fastapi import FastAPI
+from agent_manager import AgentManager
 
-app = Flask(__name__)
+app = FastAPI()
+agent_manager = AgentManager()
 
-@app.route("/")
-def home():
-    return "Welcome to NeuraMind AI Backend!"
+@app.get("/task/{task_type}")
+def handle(task_type: str, q: str):
+    """
+    API endpoint to handle tasks by delegating them to the appropriate agent.
 
-@app.route("/route")
-def route():
-    # Example route calculation
-    return get_route("New York", "Los Angeles")
+    Args:
+        task_type (str): The type of task to handle (e.g., 'write', 'code', 'image').
+        q (str): The input query or prompt for the task.
 
-@app.route("/generate-image")
-def generate_image_route():
-    # Example image generation
-    return generate_image("A futuristic cityscape at night.")
+    Returns:
+        dict: The result of the task handled by the agent.
+    """
+    return {"result": agent_manager.handle_task(task_type, q)}
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
